@@ -10,6 +10,7 @@
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
   <link rel="manifest" href="/site.webmanifest" />
   <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
   <style>
     html {
       scroll-behavior: smooth;
@@ -23,7 +24,7 @@
     class="hidden fixed bottom-6 right-6 bg-gray-800 hover:bg-gray-700 text-white p-3 rounded-full shadow-lg"
     onclick="window.scrollTo({ top: 0, behavior: 'smooth' })"
     aria-label="Scroll to top">
-    ⬆
+    <i data-lucide="chevron-up" class="w-5 h-5"></i>
   </button>
 
   <!-- Header -->
@@ -54,14 +55,21 @@
     </div>
   </header>
 
-    <!-- Social Media Links -->
-    <div class="text-center mt-6 space-x-6">
-      <a href="https://www.youtube.com/@ryneawin" class="text-red-500 hover:underline" target="_blank">YouTube</a>
-      <a href="https://www.instagram.com/ryneawin/" class="text-pink-500 hover:underline" target="_blank">Instagram</a>
-      <a href="https://x.com/ryne_awin" class="text-neutral-300 hover:text-white hover:underline" target="_blank">X.com</a>
-      <a href="https://www.facebook.com/reyonceaswin" class="text-blue-600 hover:underline" target="_blank">Facebook</a>
-    </div>
-  </header>
+  <!-- Social Media Links -->
+  <div class="text-center mt-6 flex justify-center space-x-6">
+    <a href="https://www.youtube.com/@ryneawin" target="_blank" class="text-red-500 hover:text-white">
+      <i data-lucide="youtube" class="w-5 h-5"></i>
+    </a>
+    <a href="https://www.instagram.com/ryneawin/" target="_blank" class="text-pink-500 hover:text-white">
+      <i data-lucide="instagram" class="w-5 h-5"></i>
+    </a>
+    <a href="https://x.com/ryne_awin" target="_blank" class="text-neutral-300 hover:text-white">
+      <i data-lucide="twitter" class="w-5 h-5"></i>
+    </a>
+    <a href="https://www.facebook.com/reyonceaswin" target="_blank" class="text-blue-600 hover:text-white">
+      <i data-lucide="facebook" class="w-5 h-5"></i>
+    </a>
+  </div>
 
   <!-- About Section -->
   <div id="home" class="max-w-2xl mx-auto text-center text-gray-300 mb-16 px-4">
@@ -78,7 +86,6 @@
         <iframe class="w-full aspect-video rounded-xl"
           src="https://www.youtube.com/embed/VuNRjptAnqc"
           title="Track Title" frameborder="0" allowfullscreen></iframe>
-        <!--<p class="mt-4 text-gray-300">Another Track – Mood or style description</p>-->
       </div>
       <div class="bg-zinc-900 p-4 rounded-xl">
         <iframe class="w-full aspect-video rounded-xl"
@@ -137,6 +144,7 @@
 
   <!-- Scroll To Top Script -->
   <script>
+    lucide.createIcons();
     const scrollTopBtn = document.getElementById("scrollTopBtn");
     window.addEventListener("scroll", () => {
       scrollTopBtn.classList.toggle("hidden", window.scrollY < 200);
