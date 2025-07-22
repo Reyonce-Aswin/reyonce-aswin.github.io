@@ -66,20 +66,17 @@
   <section class="mb-16">
     <h2 class="text-2xl font-semibold mb-6 text-center">Featured Works</h2>
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <!-- YouTube Player 1 -->
       <div class="bg-zinc-900 p-4 rounded-xl">
-        <iframe class="w-full aspect-video rounded-xl"
-          src="https://www.youtube.com/embed/VuNRjptAnqc"
-          title="Track Title" frameborder="0" allowfullscreen></iframe>
+        <div id="player1" class="w-full aspect-video rounded-xl"></div>
       </div>
+      <!-- YouTube Player 2 -->
       <div class="bg-zinc-900 p-4 rounded-xl">
-        <iframe class="w-full aspect-video rounded-xl"
-          src="https://www.youtube.com/embed/AfXL4QZ5jWU"
-          title="Another Track" frameborder="0" allowfullscreen></iframe>
+        <div id="player2" class="w-full aspect-video rounded-xl"></div>
       </div>
+      <!-- YouTube Player 3 -->
       <div class="bg-zinc-900 p-4 rounded-xl">
-        <iframe class="w-full aspect-video rounded-xl"
-          src="https://www.youtube.com/embed/QO9FfI8jBiU"
-          title="Another Track" frameborder="0" allowfullscreen></iframe>
+        <div id="player3" class="w-full aspect-video rounded-xl"></div>
       </div>
     </div>
   </section>
@@ -88,13 +85,13 @@
   <section id="services" class="mb-16">
     <h2 class="text-2xl font-semibold mb-6 text-center">Services</h2>
     <div class="max-w-3xl mx-auto space-y-6 text-center text-gray-300">
-      <div class="bg-zinc-800 p-6 rounded-xl shadow-md">
+      <div class="bg-zinc-800 p-6 rounded-xl shadow-md transition-transform hover:scale-105">
         <h3 class="text-xl font-medium mb-2">Mixing & Mastering</h3>
-        <p>Professional audio mixing and mastering to bring your tracks to life with clarity, depth, and punch.</p>
+        <p class = "text-gray-300">Professional audio mixing and mastering to bring your tracks to life with clarity, depth, and punch.</p>
       </div>
-      <div class="bg-zinc-800 p-6 rounded-xl shadow-md">
+      <div class="bg-zinc-800 p-6 rounded-xl shadow-md transition-transform hover:scale-105">
         <h3 class="text-xl font-medium mb-2">Film / Background Scoring</h3>
-        <p>Custom compositions for film, web series, games, or background environments to elevate emotional impact.</p>
+        <p class = "text-gray-300">Custom compositions for film, web series, games, or background environments to elevate emotional impact.</p>
       </div>
     </div>
   </section>
@@ -107,7 +104,7 @@
         <h3 class="text-xl font-medium">Echoes of Tomorrow</h3>
         <p class="text-gray-400">
           Coming Soon – 
-          <a href="https://www.instagram.com/ryneawin/" target="_blank" class="text-blue-400 underline">
+          <a href="https://www.instagram.com/ryneawin/" target="_blank" class="text-blue-400 hover:underline">
             Click Here
           </a>
         </p>
@@ -118,22 +115,22 @@
   <!-- Contact Section -->
   <section id="contact" class="mb-16 text-center">
     <h2 class="text-2xl font-semibold mb-6">Contact</h2>
-    <p class="text-gray-300">For collaborations or service inquiries, reach out at <a href="mailto:ryneawin@gmail.com" class="text-blue-400 underline">ryneawin@gmail.com</a></p>
-
+    <p class="text-gray-300">For collaborations or service inquiries, reach out at <a href="mailto:ryneawin@gmail.com" class="text-blue-400 hover:underline">ryneawin@gmail.com</a></p>
+  
     <!-- Social Media Links -->
     <div class="text-center mt-6 flex justify-center space-x-6">
-     <a href="https://www.youtube.com/@ryneawin" target="_blank" class="text-red-500 hover:text-white">
-       <i data-lucide="youtube" class="w-5 h-5"></i>
-     </a>
-     <a href="https://www.instagram.com/ryneawin/" target="_blank" class="text-pink-500 hover:text-white">
-       <i data-lucide="instagram" class="w-5 h-5"></i>
-     </a>
-     <a href="https://x.com/ryne_awin" target="_blank" class="text-neutral-300 hover:text-white">
-       <i data-lucide="twitter" class="w-5 h-5"></i>
-     </a>
-     <a href="https://www.facebook.com/reyonceaswin" target="_blank" class="text-blue-600 hover:text-white">
-       <i data-lucide="facebook" class="w-5 h-5"></i>
-     </a>
+      <a href="https://www.youtube.com/@ryneawin" target="_blank" class="text-red-500 hover:text-white">
+        <i data-lucide="youtube" class="w-5 h-5"></i>
+      </a>
+      <a href="https://www.instagram.com/ryneawin/" target="_blank" class="text-pink-500 hover:text-white">
+        <i data-lucide="instagram" class="w-5 h-5"></i>
+      </a>
+      <a href="https://x.com/ryne_awin" target="_blank" class="text-blue-400 hover:text-white">
+        <i data-lucide="twitter" class="w-5 h-5"></i>
+      </a>
+      <a href="https://www.facebook.com/reyonceaswin" target="_blank" class="text-blue-600 hover:text-white">
+        <i data-lucide="facebook" class="w-5 h-5"></i>
+      </a>
     </div>
   </section>
 
@@ -142,13 +139,70 @@
     &copy; 2025 Reyonce Aswin. All rights reserved.
   </footer>
 
-  <!-- Scroll To Top Script -->
+  <!-- YouTube API Script -->
+  <script src="https://www.youtube.com/iframe_api"></script>
+
+  <!-- Page Scripts -->
   <script>
+    // Initialize Lucide Icons
     lucide.createIcons();
+
+    // Scroll To Top Button Logic
     const scrollTopBtn = document.getElementById("scrollTopBtn");
     window.addEventListener("scroll", () => {
       scrollTopBtn.classList.toggle("hidden", window.scrollY < 200);
     });
+
+    // --- YouTube Player API Logic ---
+    let players = []; // An array to hold all player objects
+
+    // This function is called automatically by the YouTube API script when it's ready
+    function onYouTubeIframeAPIReady() {
+      // Player 1
+      players.push(new YT.Player('player1', {
+        videoId: 'VuNRjptAnqc', // The YouTube video ID
+        playerVars: { 'playsinline': 1 },
+        events: {
+          'onStateChange': onPlayerStateChange
+        }
+      }));
+
+      // Player 2
+      players.push(new YT.Player('player2', {
+        videoId: 'AfXL4QZ5jWU',
+        playerVars: { 'playsinline': 1 },
+        events: {
+          'onStateChange': onPlayerStateChange
+        }
+      }));
+
+      // Player 3
+      players.push(new YT.Player('player3', {
+        videoId: 'QO9FfI8jBiU',
+        playerVars: { 'playsinline': 1 },
+        events: {
+          'onStateChange': onPlayerStateChange
+        }
+      }));
+    }
+
+    // This function is called every time a player's state changes (e.g., plays, pauses)
+    function onPlayerStateChange(event) {
+      // Check if a video has started playing
+      if (event.data == YT.PlayerState.PLAYING) {
+        const playedPlayer = event.target; // The player that just started
+        
+        // Loop through all our players
+        for (let i = 0; i < players.length; i++) {
+          const player = players[i];
+          // If this player is not the one that just started playing...
+          if (player !== playedPlayer) {
+            // ...pause it.
+            player.pauseVideo();
+          }
+        }
+      }
+    }
   </script>
 
 </body>
