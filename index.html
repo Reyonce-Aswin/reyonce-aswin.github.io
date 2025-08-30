@@ -12,26 +12,24 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://unpkg.com/lucide@latest"></script>
   <style>
-    html {
-      scroll-behavior: smooth;
-    }
+    html { scroll-behavior: smooth; }
   </style>
 </head>
 <body class="bg-black text-white px-4 py-10 relative">
 
   <!-- Scroll To Top Button -->
   <button id="scrollTopBtn"
-    class="hidden fixed bottom-6 right-6 bg-gray-800 hover:bg-gray-700 text-white p-3 rounded-full shadow-lg"
+    class="hidden fixed bottom-6 right-6 bg-gray-800 hover:bg-gray-700 text-white p-3 rounded-full shadow-lg transition transform hover:scale-110"
     onclick="window.scrollTo({ top: 0, behavior: 'smooth' })"
     aria-label="Scroll to top">
     <i data-lucide="chevron-up" class="w-5 h-5"></i>
   </button>
 
   <!-- Header -->
-  <header class="mb-10">
-    <div class="flex flex-col md:flex-row items-center justify-between gap-4 text-center md:text-left">
+  <header class="mb-16 sticky top-0 z-50 backdrop-blur-md bg-black/70 border-b border-zinc-800">
+    <div class="flex flex-col md:flex-row items-center justify-between gap-4 px-2 py-4 max-w-6xl mx-auto">
       <!-- Logo + Name -->
-      <div class="flex items-center gap-4 justify-center md:justify-start w-full md:w-auto">
+      <div class="flex items-center gap-4">
         <img src="ryne-logo.png" alt="Ryne Awin Logo" class="w-14 h-14 object-contain" />
         <div>
           <h1 class="text-3xl font-bold leading-tight">Ryne Awin</h1>
@@ -39,16 +37,16 @@
         </div>
       </div>
       <!-- Tabs + Join Button -->
-      <div class="w-full md:w-auto flex justify-center md:justify-end items-center space-x-4">
-        <nav class="flex space-x-4 text-sm font-medium">
-          <a href="#home" class="text-gray-300 hover:text-white">Home</a>
-          <a href="services.html" class="text-gray-300 hover:text-white">Services</a>
-          <a href="blogs.html" class="text-gray-300 hover:text-white">Blogs</a>
-          <a href="#contact" class="text-gray-300 hover:text-white">Contact</a>
+      <div class="flex items-center space-x-6">
+        <nav class="flex space-x-6 text-sm font-medium">
+          <a href="#home" class="text-blue-400 font-semibold">Home</a>
+          <a href="services.html" class="text-gray-300 hover:text-blue-400 transition">Services</a>
+          <a href="blogs.html" class="text-gray-300 hover:text-blue-400 transition">Blogs</a>
+          <a href="#contact" class="text-gray-300 hover:text-blue-400 transition">Contact</a>
         </nav>
         <a href="https://docs.google.com/forms/d/e/1FAIpQLScX81SgGEOpsxQy6W3cxBelAlVb4PSHjXOkvepTjUK7KyoIEg/viewform?usp=header"
            target="_blank" rel="noopener noreferrer">
-          <button class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-full">
+          <button class="px-6 py-2 rounded-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-500 hover:to-purple-500 shadow-md hover:shadow-lg transition transform hover:scale-105">
             Join Musix
           </button>
         </a>
@@ -57,51 +55,55 @@
   </header>
 
   <!-- About Section -->
-  <div id="home" class="max-w-2xl mx-auto text-center text-gray-300 mb-16 px-4">
+  <div id="home" class="max-w-2xl mx-auto text-center text-gray-400 mb-20 px-4 leading-relaxed">
     <p>
       I am a passionate musician and producer exploring the depths of sound and emotion. This space is dedicated to showcasing my creative works and journey. Stay tuned for performances, new tracks, and collaborations.
     </p>
   </div>
 
   <!-- Featured Works -->
-  <section class="mb-16">
-    <h2 class="text-2xl font-semibold mb-6 text-center">Featured Works</h2>
+  <section class="mb-20">
+    <h2 class="text-3xl font-bold mb-8 text-center bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">Featured Works</h2>
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-      <!-- YouTube Player 1 -->
-      <div class="bg-zinc-900 p-4 rounded-xl">
+      <div class="bg-zinc-900/80 p-4 rounded-2xl border border-zinc-800 hover:border-blue-500 shadow-md transition transform hover:scale-[1.02]">
         <div id="player1" class="w-full aspect-video rounded-xl"></div>
       </div>
-      <!-- YouTube Player 2 -->
-      <div class="bg-zinc-900 p-4 rounded-xl">
+      <div class="bg-zinc-900/80 p-4 rounded-2xl border border-zinc-800 hover:border-green-500 shadow-md transition transform hover:scale-[1.02]">
         <div id="player2" class="w-full aspect-video rounded-xl"></div>
       </div>
-      <!-- YouTube Player 3 -->
-      <div class="bg-zinc-900 p-4 rounded-xl">
+      <div class="bg-zinc-900/80 p-4 rounded-2xl border border-zinc-800 hover:border-purple-500 shadow-md transition transform hover:scale-[1.02]">
         <div id="player3" class="w-full aspect-video rounded-xl"></div>
       </div>
     </div>
   </section>
 
   <!-- Services Section -->
-  <section id="services" class="mb-16">
-    <h2 class="text-2xl font-semibold mb-6 text-center">Services</h2>
-    <div class="max-w-3xl mx-auto space-y-6 text-center">
-      <div class="bg-zinc-800 p-6 rounded-xl shadow-md transition-transform hover:scale-105">
-        <h3 class="text-xl font-medium mb-2">Mixing & Mastering</h3>
-        <p class = "text-gray-300">Professional audio mixing and mastering to bring your tracks to life with clarity, depth, and punch.</p>
-      </div>
-      <div class="bg-zinc-800 p-6 rounded-xl shadow-md transition-transform hover:scale-105">
-        <h3 class="text-xl font-medium mb-2">Film / Background Scoring</h3>
-        <p class = "text-gray-300">Custom compositions for film, web series, games, or background environments to elevate emotional impact.</p>
-      </div>
+<section id="services" class="mb-20">
+  <h2 class="text-3xl font-bold mb-8 text-center bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">Services</h2>
+
+  <!-- Use a 2-column grid for medium screens and above -->
+  <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6">
+    <div class="bg-zinc-900/80 p-6 rounded-2xl border border-zinc-800 hover:border-blue-500 shadow-md transition transform hover:scale-[1.02] text-center">
+      <h3 class="text-xl font-semibold mb-2">Music Production & Composition</h3>
     </div>
-  </section>
+    <div class="bg-zinc-900/80 p-6 rounded-2xl border border-zinc-800 hover:border-green-500 shadow-md transition transform hover:scale-[1.02] text-center">
+      <h3 class="text-xl font-semibold mb-2">Mixing & Mastering</h3>
+    </div>
+    <div class="bg-zinc-900/80 p-6 rounded-2xl border border-zinc-800 hover:border-yellow-500 shadow-md transition transform hover:scale-[1.02] text-center">
+      <h3 class="text-xl font-semibold mb-2">Audio Editing & Vocal Clean-ups</h3>
+    </div>
+    <div class="bg-zinc-900/80 p-6 rounded-2xl border border-zinc-800 hover:border-purple-500 shadow-md transition transform hover:scale-[1.02] text-center">
+      <h3 class="text-xl font-semibold mb-2">Film / Background Scoring</h3>
+    </div>
+  </div>
+</section>
+
 
   <!-- Upcoming Events -->
-  <section class="mb-16">
-    <h2 class="text-2xl font-semibold mb-6 text-center">Upcoming Events</h2>
+  <section class="mb-20">
+    <h2 class="text-3xl font-bold mb-8 text-center bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">Upcoming Events</h2>
     <div class="max-w-xl mx-auto space-y-6">
-      <div class="bg-zinc-800 p-4 rounded-2xl shadow-md transition-transform hover:scale-105">
+      <div class="bg-zinc-900/80 p-6 rounded-2xl border border-zinc-800 hover:border-blue-500 shadow-md transition transform hover:scale-[1.02]">
         <h3 class="text-xl font-medium">Echoes of Tomorrow</h3>
         <p class="text-gray-400">
           Coming Soon – 
@@ -114,29 +116,29 @@
   </section>
 
   <!-- Contact Section -->
-  <section id="contact" class="mb-16 text-center">
-    <h2 class="text-2xl font-semibold mb-6">Contact</h2>
-    <p class="text-gray-300">For collaborations or service inquiries, reach out at <a href="mailto:ryneawin@gmail.com" class="text-blue-400 hover:underline">ryneawin@gmail.com</a></p>
+  <section id="contact" class="mb-20 text-center">
+    <h2 class="text-3xl font-bold mb-8 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">Contact</h2>
+    <p class="text-gray-400">For collaborations or service inquiries, reach out at <a href="mailto:ryneawin@gmail.com" class="text-blue-400 hover:underline">ryneawin@gmail.com</a></p>
   
     <!-- Social Media Links -->
-    <div class="text-center mt-6 flex justify-center space-x-6">
-      <a href="https://www.youtube.com/@ryneawin" target="_blank" class="text-red-500 hover:text-white">
-        <i data-lucide="youtube" class="w-5 h-5"></i>
+    <div class="mt-6 flex justify-center space-x-6">
+      <a href="https://www.youtube.com/@ryneawin" target="_blank" class="text-gray-400 hover:text-red-500 hover:drop-shadow-[0_0_6px_rgb(239,68,68)] transition">
+        <i data-lucide="youtube" class="w-6 h-6"></i>
       </a>
-      <a href="https://www.instagram.com/ryneawin/" target="_blank" class="text-pink-500 hover:text-white">
-        <i data-lucide="instagram" class="w-5 h-5"></i>
+      <a href="https://www.instagram.com/ryneawin/" target="_blank" class="text-gray-400 hover:text-pink-500 hover:drop-shadow-[0_0_6px_rgb(236,72,153)] transition">
+        <i data-lucide="instagram" class="w-6 h-6"></i>
       </a>
-      <a href="https://x.com/ryne_awin" target="_blank" class="text-blue-400 hover:text-white">
-        <i data-lucide="twitter" class="w-5 h-5"></i>
+      <a href="https://x.com/ryne_awin" target="_blank" class="text-gray-400 hover:text-blue-400 hover:drop-shadow-[0_0_6px_rgb(59,130,246)] transition">
+        <i data-lucide="twitter" class="w-6 h-6"></i>
       </a>
-      <a href="https://www.facebook.com/reyonceaswin" target="_blank" class="text-blue-600 hover:text-white">
-        <i data-lucide="facebook" class="w-5 h-5"></i>
+      <a href="https://www.facebook.com/reyonceaswin" target="_blank" class="text-gray-400 hover:text-blue-600 hover:drop-shadow-[0_0_6px_rgb(37,99,235)] transition">
+        <i data-lucide="facebook" class="w-6 h-6"></i>
       </a>
     </div>
   </section>
 
   <!-- Footer -->
-  <footer class="text-center text-gray-500 text-sm mt-20">
+  <footer class="text-center text-gray-500 text-sm mt-20 border-t border-zinc-800 pt-6">
     &copy; 2025 Reyonce Aswin. All rights reserved.
   </footer>
 
@@ -155,52 +157,17 @@
     });
 
     // --- YouTube Player API Logic ---
-    let players = []; // An array to hold all player objects
-
-    // This function is called automatically by the YouTube API script when it's ready
+    let players = [];
     function onYouTubeIframeAPIReady() {
-      // Player 1
-      players.push(new YT.Player('player1', {
-        videoId: 'mjpmBK7VzZI', // The YouTube video ID
-        playerVars: { 'playsinline': 1 },
-        events: {
-          'onStateChange': onPlayerStateChange
-        }
-      }));
-
-      // Player 2
-      players.push(new YT.Player('player2', {
-        videoId: 'VuNRjptAnqc',
-        playerVars: { 'playsinline': 1 },
-        events: {
-          'onStateChange': onPlayerStateChange
-        }
-      }));
-
-      // Player 3
-      players.push(new YT.Player('player3', {
-        videoId: 'AfXL4QZ5jWU',
-        playerVars: { 'playsinline': 1 },
-        events: {
-          'onStateChange': onPlayerStateChange
-        }
-      }));
+      players.push(new YT.Player('player1', { videoId: 'mjpmBK7VzZI', playerVars: { 'playsinline': 1 }, events: { 'onStateChange': onPlayerStateChange }}));
+      players.push(new YT.Player('player2', { videoId: 'VuNRjptAnqc', playerVars: { 'playsinline': 1 }, events: { 'onStateChange': onPlayerStateChange }}));
+      players.push(new YT.Player('player3', { videoId: 'AfXL4QZ5jWU', playerVars: { 'playsinline': 1 }, events: { 'onStateChange': onPlayerStateChange }}));
     }
-
-    // This function is called every time a player's state changes (e.g., plays, pauses)
     function onPlayerStateChange(event) {
-      // Check if a video has started playing
       if (event.data == YT.PlayerState.PLAYING) {
-        const playedPlayer = event.target; // The player that just started
-        
-        // Loop through all our players
+        const playedPlayer = event.target;
         for (let i = 0; i < players.length; i++) {
-          const player = players[i];
-          // If this player is not the one that just started playing...
-          if (player !== playedPlayer) {
-            // ...pause it.
-            player.pauseVideo();
-          }
+          if (players[i] !== playedPlayer) players[i].pauseVideo();
         }
       }
     }
@@ -208,5 +175,3 @@
 
 </body>
 </html>
-
-
