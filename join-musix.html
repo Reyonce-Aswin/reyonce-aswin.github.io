@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Services - Ryne Awin</title>
+  <title>Join Musix – Ryne Awin</title>
   <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   <link rel="shortcut icon" href="/favicon.ico" />
@@ -16,6 +16,7 @@
   </style>
 </head>
 <body class="bg-black text-white px-4 py-10 relative">
+  <!-- Scroll To Top Button -->
   <button id="scrollTopBtn"
     class="hidden fixed bottom-6 right-6 bg-gray-800 hover:bg-gray-700 text-white p-3 rounded-full shadow-lg transition transform hover:scale-110"
     onclick="window.scrollTo({ top: 0, behavior: 'smooth' })"
@@ -23,8 +24,10 @@
     <i data-lucide="chevron-up" class="w-5 h-5"></i>
   </button>
 
+  <!-- Header -->
   <header class="mb-16 sticky top-0 z-50 backdrop-blur-md bg-black/70 border-b border-zinc-800">
     <div class="flex flex-col md:flex-row items-center justify-between gap-4 px-2 py-4 max-w-6xl mx-auto">
+      <!-- Logo + Name -->
       <div class="flex items-center gap-4">
         <img src="ryne-logo.png" alt="Ryne Awin Logo" class="w-14 h-14 object-contain" />
         <div>
@@ -32,14 +35,15 @@
           <p class="text-gray-400 text-sm">Music Producer | Composer | Artist</p>
         </div>
       </div>
+      <!-- Tabs + Join Button -->
       <div class="flex items-center space-x-6">
         <nav class="flex space-x-6 text-sm font-medium">
           <a href="index.html" class="text-gray-300 hover:text-blue-400 transition">Home</a>
-          <a href="services.html" class="text-blue-400 font-semibold">Services</a>
+          <a href="services.html" class="text-gray-300 hover:text-blue-400 transition">Services</a>
           <a href="blogs.html" class="text-gray-300 hover:text-blue-400 transition">Blogs</a>
           <a href="#contact" class="text-gray-300 hover:text-blue-400 transition">Contact</a>
         </nav>
-        <a href="join-musix.html">
+        <a href="#join-now-button">
           <button class="px-6 py-2 rounded-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-500 hover:to-purple-500 shadow-md hover:shadow-lg transition transform hover:scale-105">
             Join Musix
           </button>
@@ -47,38 +51,59 @@
       </div>
     </div>
   </header>
+  
+  <main class="text-center py-20">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="text-5xl font-extrabold mb-8 py-2 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">Join Musix: The Art of Sound, Together</h2>
+      
+      <div class="space-y-12 text-left mb-16">
+        <section class="py-10 px-8 text-center">
+          <h3 class="text-3xl font-bold mb-4">What is Musix?</h3>
+          <p class="text-gray-400 leading-normal max-w-4xl mx-auto">
+            Musix is a vibrant community for a wide range of creative professionals and aspiring artists. Whether you're a <b>musician, singer, vocalist, songwriter, lyricist, beatmaker, composer</b>, or if your talents lie in <b>sound design, mixing, and mastering</b>, this is a place for you. It's also a collaborative space for those who bring music to life visually, such as <b>videographers and video editors</b>. I created this group to foster a shared environment where we can connect, collaborate, and grow together. By joining, you'll find a supportive network to share your work, get feedback, and find your next creative partner.
+          </p>
+        </section>
 
-  <section class="max-w-4xl mx-auto text-center mb-16 px-4">
-    <h2 class="text-5xl font-bold mb-6 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent py-2">Sound That Speaks</h2>
-    <p class="text-gray-400 text-lg leading-relaxed">I help artists, filmmakers, and creators shape their sound with clarity and creativity. From music production to film scoring, my work is about bringing ideas to life and making them sound professional, powerful, and unforgettable.</p>
-  </section>
-
-  <section class="max-w-7xl mx-auto text-left mb-20 px-4 grid grid-cols-1 lg:grid-cols-2 gap-10">
-    <div class="bg-zinc-900/80 p-8 rounded-2xl border border-zinc-800 hover:border-blue-500 shadow-md transition transform hover:scale-[1.02]">
-      <h3 class="text-2xl font-semibold mb-4">Music Production & Composition</h3>
-      <p class="text-gray-400 leading-relaxed">Bring your ideas to life with original tracks tailored to your vision. Whether you need custom beats, background scores, or a full song, I craft music that connects with your audience.</p>
+        <section class="bg-zinc-900/80 p-8 rounded-2xl border border-zinc-800 shadow-md">
+          <h3 class="text-3xl font-bold mb-4">Benefits of Joining Musix</h3>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 text-center mt-6">
+            <!-- Community & Networking Card -->
+            <div class="bg-zinc-800/80 p-6 rounded-xl border border-zinc-700 hover:border-blue-500 hover:scale-105 transition transform shadow-md">
+              <i data-lucide="users" class="w-8 h-8 mx-auto mb-3 text-blue-400"></i>
+              <h4 class="text-lg font-semibold mb-1">Collaboration & Community</h4>
+              <p class="text-sm text-gray-400">Connect and collaborate with me and other members.</p>
+            </div>
+            <!-- Exclusive Content Card -->
+            <div class="bg-zinc-800/80 p-6 rounded-xl border border-zinc-700 hover:border-green-500 hover:scale-105 transition transform shadow-md">
+              <i data-lucide="book" class="w-8 h-8 mx-auto mb-3 text-green-400"></i>
+              <h4 class="text-lg font-semibold mb-1">Share Your Articles</h4>
+              <p class="text-sm text-gray-400">Post blogs and articles on music production, tools, and techniques.</p>
+            </div>
+            <!-- Collaboration Opportunities Card -->
+            <div class="bg-zinc-800/80 p-6 rounded-xl border border-zinc-700 hover:border-purple-500 hover:scale-105 transition transform shadow-md">
+              <i data-lucide="headphones" class="w-8 h-8 mx-auto mb-3 text-purple-400"></i>
+              <h4 class="text-lg font-semibold mb-1">One-on-One Guidance</h4>
+              <p class="text-sm text-gray-400">Communicate with me directly for creative guidance and feedback.</p>
+            </div>
+          </div>
+        </section>
+      </div>
     </div>
 
-    <div class="bg-zinc-900/80 p-8 rounded-2xl border border-zinc-800 hover:border-green-500 shadow-md transition transform hover:scale-[1.02]">
-      <h3 class="text-2xl font-semibold mb-4">Mixing & Mastering</h3>
-      <p class="text-gray-400 leading-relaxed">Your music deserves to sound its best. I deliver clean, balanced mixes and professional masters that translate seamlessly across streaming platforms, live shows, and any listening environment.</p>
-    </div>
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLScX81SgGEOpsxQy6W3cxBelAlVb4PSHjXOkvepTjUK7KyoIEg/viewform?usp=header"
+       target="_blank" rel="noopener noreferrer" class="inline-block" id="join-now-button">
+      <button class="px-10 py-4 rounded-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-500 hover:to-purple-500 text-xl font-bold shadow-lg hover:shadow-xl transition transform hover:scale-105">
+        Join Musix Now
+      </button>
+    </a>
+  </main>
 
-    <div class="bg-zinc-900/80 p-8 rounded-2xl border border-zinc-800 hover:border-yellow-500 shadow-md transition transform hover:scale-[1.02]">
-      <h3 class="text-2xl font-semibold mb-4">Audio Editing & Vocal Clean-ups</h3>
-      <p class="text-gray-400 leading-relaxed">Perfect for podcasters, singers, and creators. From vocal noise removal to precise timing edits, I make your recordings clear, polished, and ready for release.</p>
-    </div>
-
-    <div class="bg-zinc-900/80 p-8 rounded-2xl border border-zinc-800 hover:border-purple-500 shadow-md transition transform hover:scale-[1.02]">
-      <h3 class="text-2xl font-semibold mb-4">Film / Background Scoring</h3>
-      <p class="text-gray-400 leading-relaxed">Set the right mood for your story. I create cinematic soundscapes that enhance visuals, build emotion, and leave a lasting impact on your audience.</p>
-    </div>
-  </section>
-
+  <!-- Contact Section -->
   <section id="contact" class="mb-20 text-center">
     <h2 class="text-3xl font-bold mb-8 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">Contact</h2>
     <p class="text-gray-400">For collaborations or service inquiries, reach out at <a href="mailto:ryneawin@gmail.com" class="text-blue-400 hover:underline">ryneawin@gmail.com</a></p>
   
+    <!-- Social Media Links -->
     <div class="mt-6 flex justify-center space-x-6">
       <a href="https://www.youtube.com/@ryneawin" target="_blank" class="text-gray-400 hover:text-red-500 hover:drop-shadow-[0_0_6px_rgb(239,68,68)] transition">
         <i data-lucide="youtube" class="w-6 h-6"></i>
@@ -95,10 +120,12 @@
     </div>
   </section>
 
+  <!-- Footer -->
   <footer class="text-center text-gray-500 text-sm mt-20 border-t border-zinc-800 pt-6">
     &copy; 2025 Reyonce Aswin. All rights reserved.
   </footer>
-
+  
+  <!-- Scripts -->
   <script>
     const scrollTopBtn = document.getElementById("scrollTopBtn");
     window.addEventListener("scroll", () => {
