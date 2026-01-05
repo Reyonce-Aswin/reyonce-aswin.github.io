@@ -3,20 +3,32 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ryne Awin – Official Site</title>
-  <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-  <link rel="shortcut icon" href="/favicon.ico" />
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-  <link rel="manifest" href="/site.webmanifest" />
+  <title>Ryne Awin - Official Site</title>
+
+  <!-- Favicon and icons (inside /icons folder) -->
+  <link rel="icon" type="image/png" href="/icons/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="/icons/favicon.svg" />
+  <link rel="shortcut icon" href="/icons/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png" />
+  <link rel="manifest" href="/icons/site.webmanifest" />
+
+  <!-- Tailwind and Lucide -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Custom styles -->
   <style>
     html { scroll-behavior: smooth; }
+    body {
+      background-color: #000;
+      background-image: radial-gradient(circle at 50% 50%, #1a1a1a 0%, #000 100%);
+      background-attachment: fixed;
+    }
   </style>
 </head>
 <body class="bg-black text-white px-4 py-10 relative">
 
+  <!-- Scroll To Top Button -->
   <button id="scrollTopBtn"
     class="hidden fixed bottom-6 right-6 bg-gray-800 hover:bg-gray-700 text-white p-3 rounded-full shadow-lg transition transform hover:scale-110"
     onclick="window.scrollTo({ top: 0, behavior: 'smooth' })"
@@ -24,23 +36,28 @@
     <i data-lucide="chevron-up" class="w-5 h-5"></i>
   </button>
 
-  <header class="mb-16 sticky top-0 z-50 backdrop-blur-md bg-black/70 border-b border-zinc-800">
+  <!-- Header -->
+  <header class="mb-16 sticky top-0 z-50 backdrop-blur-md bg-blend-darken/70 border-b border-zinc-800">
     <div class="flex flex-col md:flex-row items-center justify-between gap-4 px-2 py-4 max-w-6xl mx-auto">
+      <!-- Logo + Name -->
       <div class="flex items-center gap-4">
-        <img src="ryne-logo.png" alt="Ryne Awin Logo" class="w-14 h-14 object-contain" />
+        <img src="icons/ryne-logo.png" alt="Ryne Awin Logo" class="w-14 h-14 object-contain" />
         <div>
-          <h1 class="text-3xl font-bold leading-tight">Ryne Awin</h1>
-          <p class="text-gray-400 text-sm">Music Producer | Composer | Artist</p>
+          <h1 class="text-3xl font-bold mb-1 italic leading-tight">Ryne Awin</h1>
+          <p class="text-gray-400 text-xs italic uppercase tracking-widest font-medium">Producer • Composer • Artist</p>
         </div>
       </div>
+      <!-- Tabs + Join Button -->
       <div class="flex items-center space-x-6">
         <nav class="flex space-x-6 text-sm font-medium">
           <a href="#home" class="text-blue-400 font-semibold">Home</a>
           <a href="services.html" class="text-gray-300 hover:text-blue-400 transition">Services</a>
           <a href="blogs.html" class="text-gray-300 hover:text-blue-400 transition">Blogs</a>
-          <a href="#contact" class="text-gray-300 hover:text-blue-400 transition">Contact</a>
+          <a href="downloads.html" class="text-gray-300 hover:text-blue-400 transition">Downloads</a>
+          <a href="#connect" class="text-gray-300 hover:text-blue-400 transition">Connect</a>
         </nav>
-        <a href="join-musix.html">
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLScX81SgGEOpsxQy6W3cxBelAlVb4PSHjXOkvepTjUK7KyoIEg/viewform?usp=header"
+           target="_blank" rel="noopener noreferrer">
           <button class="px-6 py-2 rounded-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-500 hover:to-purple-500 shadow-md hover:shadow-lg transition transform hover:scale-105">
             Join Musix
           </button>
@@ -49,14 +66,16 @@
     </div>
   </header>
 
+  <!-- About Section -->
   <div id="home" class="max-w-2xl mx-auto text-center text-gray-400 mb-20 px-4 leading-relaxed">
     <p>
       I am a passionate musician and producer exploring the depths of sound and emotion. This space is dedicated to showcasing my creative works and journey. Stay tuned for performances, new tracks, and collaborations.
     </p>
   </div>
 
+  <!-- Featured Works -->
   <section class="mb-20">
-    <h2 class="text-5xl font-bold mb-8 text-center bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent py-2">Featured Works</h2>
+    <h2 class="text-3xl md:text-4xl font-bold mb-4 uppercase italic tracking-tighter text-center bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">Featured Works</h2>
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
       <div class="bg-zinc-900/80 p-4 rounded-2xl border border-zinc-800 hover:border-blue-500 shadow-md transition transform hover:scale-[1.02]">
         <div id="player1" class="w-full aspect-video rounded-xl"></div>
@@ -70,9 +89,11 @@
     </div>
   </section>
 
-  <section id="services" class="mb-20">
-  <h2 class="text-5xl font-bold mb-8 text-center bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent py-2">Services</h2>
+  <!-- Services Section -->
+<section id="services" class="mb-20">
+  <h2 class="text-3xl font-bold mb-8 text-center uppercase italic bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">Services</h2>
 
+  <!-- Use a 2-column grid for medium screens and above -->
   <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6">
     <div class="bg-zinc-900/80 p-6 rounded-2xl border border-zinc-800 hover:border-blue-500 shadow-md transition transform hover:scale-[1.02] text-center">
       <h3 class="text-xl font-semibold mb-2">Music Production & Composition</h3>
@@ -90,13 +111,14 @@
 </section>
 
 
+  <!-- Upcoming Events -->
   <section class="mb-20">
-    <h2 class="text-5xl font-bold mb-8 text-center bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent py-2">Upcoming Events</h2>
+    <h2 class="text-3xl font-bold mb-8 text-center uppercase italic bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">Upcoming Events</h2>
     <div class="max-w-xl mx-auto space-y-6">
       <div class="bg-zinc-900/80 p-6 rounded-2xl border border-zinc-800 hover:border-blue-500 shadow-md transition transform hover:scale-[1.02]">
         <h3 class="text-xl font-medium">Echoes of Tomorrow</h3>
         <p class="text-gray-400">
-          Coming Soon – 
+          Coming Soon –
           <a href="https://www.instagram.com/ryneawin/" target="_blank" class="text-blue-400 hover:underline">
             Click Here
           </a>
@@ -105,10 +127,12 @@
     </div>
   </section>
 
-  <section id="contact" class="mb-20 text-center">
-    <h2 class="text-3xl font-bold mb-8 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">Contact</h2>
+  <!-- Connect Section -->
+  <section id="connect" class="mb-20 text-center">
+    <h2 class="text-3xl font-bold mb-8 italic bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">CONNECT</h2>
     <p class="text-gray-400">For collaborations or service inquiries, reach out at <a href="mailto:ryneawin@gmail.com" class="text-blue-400 hover:underline">ryneawin@gmail.com</a></p>
-  
+
+    <!-- Social Media Links -->
     <div class="mt-6 flex justify-center space-x-6">
       <a href="https://www.youtube.com/@ryneawin" target="_blank" class="text-gray-400 hover:text-red-500 hover:drop-shadow-[0_0_6px_rgb(239,68,68)] transition">
         <i data-lucide="youtube" class="w-6 h-6"></i>
@@ -125,12 +149,15 @@
     </div>
   </section>
 
-  <footer class="text-center text-gray-500 text-sm mt-20 border-t border-zinc-800 pt-6">
+  <!-- Footer -->
+  <footer class="text-center text-gray-600 text-xs py-6 border-t border-zinc-900">
     &copy; 2025 Reyonce Aswin. All rights reserved.
   </footer>
 
+  <!-- YouTube API Script -->
   <script src="https://www.youtube.com/iframe_api"></script>
 
+  <!-- Page Scripts -->
   <script>
     // Initialize Lucide Icons
     lucide.createIcons();
