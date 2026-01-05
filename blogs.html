@@ -45,11 +45,50 @@
       </div>
       <div class="flex items-center space-x-6">
         <nav class="flex space-x-6 text-sm font-medium">
-          <a href="index.html" class="text-gray-300 hover:text-blue-400 transition">Home</a>
-          <a href="services.html" class="text-gray-300 hover:text-blue-400 transition">Services</a>
-          <a href="blogs.html" class="text-blue-400 font-semibold">Blogs</a>
-          <a href="downloads.html" class="text-gray-300 hover:text-blue-400 transition">Downloads</a>
-          <a href="#connect" class="text-gray-300 hover:text-blue-400 transition">Connect</a>
+          <!-- Home -->
+          <a href="index.html" class="group relative flex items-center justify-center text-gray-300 hover:text-blue-400 transition">
+            <i data-lucide="home" class="w-5 h-5"></i>
+            <span class="pointer-events-none absolute -bottom-9 scale-0 group-hover:scale-100 transition 
+                        rounded-full bg-zinc-800 px-3 py-1 text-[10px] text-white shadow-lg">
+              Home
+            </span>
+          </a>
+
+          <!-- Services -->
+          <a href="services.html" class="group relative flex items-center justify-center text-gray-300 hover:text-blue-400 transition">
+            <i data-lucide="wrench" class="w-5 h-5"></i>
+            <span class="pointer-events-none absolute -bottom-9 scale-0 group-hover:scale-100 transition 
+                        rounded-full bg-zinc-800 px-3 py-1 text-[10px] text-white shadow-lg">
+              Services
+            </span>
+          </a>
+
+          <!-- Blogs (Active) -->
+          <a href="blogs.html" class="group relative flex items-center justify-center text-blue-400">
+            <i data-lucide="pen-tool" class="w-5 h-5"></i>
+            <span class="pointer-events-none absolute -bottom-9 scale-0 group-hover:scale-100 transition 
+                        rounded-full bg-blue-600 px-3 py-1 text-[10px] text-white shadow-lg">
+              Blogs
+            </span>
+          </a>
+
+          <!-- Downloads -->
+          <a href="downloads.html" class="group relative flex items-center justify-center text-gray-300 hover:text-blue-400 transition">
+            <i data-lucide="download" class="w-5 h-5"></i>
+            <span class="pointer-events-none absolute -bottom-9 scale-0 group-hover:scale-100 transition
+                        rounded-full bg-zinc-800 px-3 py-1 text-[10px] text-white shadow-lg">
+              Downloads
+            </span>
+          </a>
+
+          <!-- Connect -->
+          <a href="#connect" class="group relative flex items-center justify-center text-gray-300 hover:text-blue-400 transition">
+            <i data-lucide="send" class="w-5 h-5"></i>
+            <span class="pointer-events-none absolute -bottom-9 scale-0 group-hover:scale-100 transition 
+                        rounded-full bg-zinc-800 px-3 py-1 text-[10px] text-white shadow-lg">
+              Connect
+            </span>
+          </a>
         </nav>
         <a href="join-musix.html">
           <button class="px-6 py-2 rounded-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-500 hover:to-purple-500 shadow-md hover:shadow-lg transition transform hover:scale-105">
