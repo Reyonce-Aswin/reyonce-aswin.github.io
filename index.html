@@ -208,21 +208,24 @@
     });
 
     // --- YouTube Player API Logic ---
-    let players = [];
-    function onYouTubeIframeAPIReady() {
-      players.push(new YT.Player('player1', { videoId: 'KWCIcnauGj8', playerVars: { 'playsinline': 1 }, events: { 'onStateChange': onPlayerStateChange }}));
-      players.push(new YT.Player('player2', { videoId: 'mjpmBK7VzZI', playerVars: { 'playsinline': 1 }, events: { 'onStateChange': onPlayerStateChange }}));
-      players.push(new YT.Player('player3', { videoId: 'VuNRjptAnqc', playerVars: { 'playsinline': 1 }, events: { 'onStateChange': onPlayerStateChange }}));
+    let players=[],isAPIReady=false,isDOMReady=false;
+
+    function createPlayers(){
+      if(!isAPIReady||!isDOMReady||players.length)return;
+      players.push(new YT.Player('player1',{videoId:'KWCIcnauGj8',playerVars:{playsinline:1},events:{onStateChange:onPlayerStateChange}}));
+      players.push(new YT.Player('player2',{videoId:'mjpmBK7VzZI',playerVars:{playsinline:1},events:{onStateChange:onPlayerStateChange}}));
+      players.push(new YT.Player('player3',{videoId:'VuNRjptAnqc',playerVars:{playsinline:1},events:{onStateChange:onPlayerStateChange}}));
     }
-    function onPlayerStateChange(event) {
-      if (event.data == YT.PlayerState.PLAYING) {
-        const playedPlayer = event.target;
-        for (let i = 0; i < players.length; i++) {
-          if (players[i] !== playedPlayer) players[i].pauseVideo();
-        }
+
+    function onYouTubeIframeAPIReady(){isAPIReady=true;createPlayers();}
+    document.addEventListener("DOMContentLoaded",()=>{isDOMReady=true;createPlayers();});
+
+    function onPlayerStateChange(e){
+      if(e.data==YT.PlayerState.PLAYING){
+        let p=e.target;
+        for(let i=0;i<players.length;i++) if(players[i]!==p) players[i].pauseVideo();
       }
     }
   </script>
-
 </body>
 </html>
