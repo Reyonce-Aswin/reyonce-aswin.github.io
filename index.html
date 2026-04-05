@@ -154,7 +154,7 @@
     <h2 class="text-3xl font-bold mb-8 text-center uppercase italic bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">Upcoming Events</h2>
     <div class="max-w-xl mx-auto space-y-6">
       <div class="bg-zinc-900/80 p-6 rounded-2xl border border-zinc-800 hover:border-blue-500 shadow-md transition transform hover:scale-[1.02]">
-        <h3 class="text-xl font-medium">Echoes of Tomorrow</h3>
+        <h3 class="text-xl font-medium">Static Dreams</h3>
         <p class="text-gray-400">
           Coming Soon –
           <a href="https://www.instagram.com/ryneawin/" target="_blank" class="text-blue-400 hover:underline">
@@ -210,9 +210,9 @@
     // --- YouTube Player API Logic ---
     let players = [];
     function onYouTubeIframeAPIReady() {
-      players.push(new YT.Player('player1', { videoId: 'mjpmBK7VzZI', playerVars: { 'playsinline': 1 }, events: { 'onStateChange': onPlayerStateChange }}));
-      players.push(new YT.Player('player2', { videoId: 'VuNRjptAnqc', playerVars: { 'playsinline': 1 }, events: { 'onStateChange': onPlayerStateChange }}));
-      players.push(new YT.Player('player3', { videoId: 'AfXL4QZ5jWU', playerVars: { 'playsinline': 1 }, events: { 'onStateChange': onPlayerStateChange }}));
+      players.push(new YT.Player('player1', { videoId: 'KWCIcnauGj8', playerVars: { 'playsinline': 1 }, events: { 'onStateChange': onPlayerStateChange }}));
+      players.push(new YT.Player('player2', { videoId: 'mjpmBK7VzZI', playerVars: { 'playsinline': 1 }, events: { 'onStateChange': onPlayerStateChange }}));
+      players.push(new YT.Player('player3', { videoId: 'VuNRjptAnqc', playerVars: { 'playsinline': 1 }, events: { 'onStateChange': onPlayerStateChange }}));
     }
     function onPlayerStateChange(event) {
       if (event.data == YT.PlayerState.PLAYING) {
